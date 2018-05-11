@@ -1,0 +1,8 @@
+{
+  "name": "practicaAves",
+  "app_id": "b9fb853d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
