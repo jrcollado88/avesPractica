@@ -1,18 +1,35 @@
-<!--
-  Generated template for the MenuPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary" hideBackButton>
     <ion-title>Menú principal</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  Aquí va el menú
+<ion-content>
+  <ion-grid>
+        <ion-row>
+              <ion-col text-center>
+                <button ion-button icon-left outline block>
+                  <ion-icon name="list"></ion-icon>
+                    Listado de aves
+                </button>
+                <button ion-button icon-left outline block>
+                  <ion-icon name="add"></ion-icon>
+                    Añadir ave
+                </button>
+                <button ion-button icon-left outline block (click)="not_ready()">
+                  <ion-icon name="information"></ion-icon>
+                    Información
+                </button>
+                <button ion-button icon-left outline block (click)="logout()">
+                  <ion-icon name="exit"></ion-icon>
+                    Desconectar
+                </button>
+              </ion-col>
+      </ion-row>
+</ion-grid>
+
 </ion-content>
