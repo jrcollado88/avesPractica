@@ -17,19 +17,17 @@ export class UserProvider {
 
 
   login(accountInfo: any) {
-    let seq = this.http.post(this.url + '/login/', accountInfo);
+    return this.http.post(this.url + '/login/', accountInfo);
 
-    seq.subscribe((res: any) => {
+    /*seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
-      if (res.status == 'success') {
-        //this._loggedIn(res);
+      if (res.status == 'OK') {
+
       } else {
 
       }
     }, err => {
       console.error('ERROR', err);
-    });
-
-    return seq;
+    });*/
   }
 }

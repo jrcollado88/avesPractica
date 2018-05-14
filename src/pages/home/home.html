@@ -6,11 +6,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
 
-  <ion-img src="assets/imgs/icons8-bird-100.png">
+  <img src="assets/imgs/icons8-bird-100.png">
 
-  </ion-img>
+
 
   <form (submit)="doLogin()">
     <ion-list>
@@ -31,4 +31,10 @@
 
     </ion-list>
   </form>
+
+  <ion-footer>
+    <p>
+      Desarrollado por {{developer_name}}
+    </p>
+  </ion-footer>
 </ion-content>
