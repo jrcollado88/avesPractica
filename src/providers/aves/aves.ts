@@ -20,4 +20,9 @@ export class AvesProvider {
     return this.http.get(this.url + '/getBirds/' + userId);
   }
 
+  getBirdDetails(birdId:any){
+    return this.http.get(this.url + '/getBirdDetails/' + birdId);
+
+  }
+
 }

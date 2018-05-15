@@ -11,6 +11,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { ListadoAvesPage } from '../pages/listado-aves/listado-aves';
+import { DetalleAvePage } from '../pages/detalle-ave/detalle-ave';
 import { UserProvider } from '../providers/user/user';
 import { AvesProvider } from '../providers/aves/aves';
 
@@ -19,7 +20,8 @@ import { AvesProvider } from '../providers/aves/aves';
     MyApp,
     HomePage,
     MenuPage,
-    ListadoAvesPage
+    ListadoAvesPage,
+    DetalleAvePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { AvesProvider } from '../providers/aves/aves';
     MyApp,
     HomePage,
     MenuPage,
-    ListadoAvesPage
+    ListadoAvesPage,
+    DetalleAvePage
   ],
   providers: [
     StatusBar,

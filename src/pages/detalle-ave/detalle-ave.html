@@ -6,13 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>detalleAve</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Detalles</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content *ngIf="dataLoaded" text-center>
+  <img [src]="aveDetails.bird_image" width="40%"/>
+  <h2>{{aveDetails.bird_name}}</h2>
+  <h6>Número de avistamientos: {{aveDetails.bird_sightings}}</h6>
+  <p>
+    {{aveDetails.bird_description}}
+  </p>
+
+  <ion-list>
+
+    <ion-list-header>
+      Avistamientos
+    </ion-list-header>
+
+    <ion-item *ngFor="let avistamiento of aveDetails.sightings_list">
+      {{avistamiento.place}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>
+
+<ion-footer>
+    <button ion-button full>Añadir avistamiento</button>
+</ion-footer>

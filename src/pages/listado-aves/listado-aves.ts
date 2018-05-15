@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AvesProvider } from '../../providers/aves/aves';
 import { UserProvider } from '../../providers/user/user';
-
-
-
+import { DetalleAvePage} from '../detalle-ave/detalle-ave';
 
 
 @IonicPage()
@@ -14,6 +12,7 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class ListadoAvesPage {
   avesList:any;
+  detalleAve:any=DetalleAvePage;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -29,10 +28,6 @@ export class ListadoAvesPage {
         }
     );
 
-  }
-
-  ionViewDidLoad() {
-    //console.log(this.user.getUserId());
   }
 
 }

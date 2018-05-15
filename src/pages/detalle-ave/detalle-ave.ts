@@ -1,25 +1,33 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the DetalleAvePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AvesProvider } from '../../providers/aves/aves';
 
 @IonicPage()
 @Component({
   selector: 'page-detalle-ave',
   templateUrl: 'detalle-ave.html',
 })
+
 export class DetalleAvePage {
+  aveId:any;
+  aveDetails:any;
+  private dataLoaded:boolean=false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public avesService: AvesProvider) {
+    this.aveId = this.navParams.get("aveId");
+    this.avesService.getBirdDetails(this.aveId).subscribe(
+        (resp:any) =>{
+          console.log(resp);
+          this.aveDetails = resp[0];
+         console.log("Success getDetail : " + this.aveDetails.bird_image);
+        },(err:any) =>{
+          console.log("Error getting birdDetail");
+        },
+        ()=>{
+          this.dataLoaded=true;
+        }
+    );
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetalleAvePage');
-  }
-
 }
