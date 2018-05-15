@@ -10,13 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
+import { ListadoAvesPage } from '../pages/listado-aves/listado-aves';
 import { UserProvider } from '../providers/user/user';
+import { AvesProvider } from '../providers/aves/aves';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    ListadoAvesPage
   ],
   imports: [
     BrowserModule,
@@ -28,13 +31,15 @@ import { UserProvider } from '../providers/user/user';
   entryComponents: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    ListadoAvesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    AvesProvider
   ]
 })
 export class AppModule {}

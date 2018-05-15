@@ -11,6 +11,7 @@ import { Injectable } from '@angular/core';
 export class UserProvider {
 
   url: string = 'http://dev.contanimacion.com/birds/public';
+  userId:any;
 
   constructor(public http: HttpClient) {
   }
@@ -18,7 +19,6 @@ export class UserProvider {
 
   login(accountInfo: any) {
     return this.http.post(this.url + '/login/', accountInfo);
-
     /*seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'OK') {
@@ -30,4 +30,14 @@ export class UserProvider {
       console.error('ERROR', err);
     });*/
   }
+
+  setUserId(id:any){
+    this.userId=id;
+  }
+
+  getUserId(){
+    return this.userId;
+  }
+
+
 }

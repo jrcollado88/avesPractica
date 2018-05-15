@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { ListadoAvesPage} from '../listado-aves/listado-aves';
 
 
 @IonicPage()
@@ -10,6 +11,8 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 
 
 export class MenuPage {
+
+  listadoAves:any=ListadoAvesPage;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,

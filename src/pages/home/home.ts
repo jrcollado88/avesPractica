@@ -35,17 +35,20 @@ export class HomePage {
 
   //Login through our service and error handlers
   doLogin() {
-    this.user.login(this.account).subscribe((resp:any) => {
-      if(resp.status == "OK"){
-        this.navCtrl.push(MenuPage);
-        console.log("login ok, id: " + resp.id);
-      }else{
-        this.showLoginError();
-      }
+    this.user.login(this.account).subscribe(
+      (resp:any) => {
+        if(resp.status == "OK"){
+          this.navCtrl.push(MenuPage);
+          this.user.setUserId(resp.id);
+          console.log("login ok, id: " + resp.id);
+        }else{
+          this.showLoginError();
+        }
 
-    }, (err) => {
-        this.showLoginError();
-    });
+      }, (err) => {
+          this.showLoginError();
+      }
+    );
   }
 
 
