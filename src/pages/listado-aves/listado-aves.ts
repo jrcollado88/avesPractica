@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AvesProvider } from '../../providers/aves/aves';
 import { UserProvider } from '../../providers/user/user';
 import { DetalleAvePage} from '../detalle-ave/detalle-ave';
@@ -17,17 +17,24 @@ export class ListadoAvesPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public userService: UserProvider,
-              public avesService: AvesProvider) {
+              public avesService: AvesProvider,
+              public loading: LoadingController) {
 
-    this.avesService.getBirdsList(this.userService.getUserId()).subscribe(
-        (resp:any) =>{
-          this.avesList = resp;
-        //  console.log("Success getBirds : " + this.avesList);
-        },(err:any) =>{
-          console.log("Error getting birds");
-        }
-    );
+    let loader = this.loading.create({
+      content: 'Cargando aves...',
+    });
 
+    loader.present().then(() => {
+      this.avesService.getBirdsList(this.userService.getUserId()).subscribe(
+          (resp:any) =>{
+            this.avesList = resp;
+          //  console.log("Success getBirds : " + this.avesList);
+          },(err:any) =>{
+            console.log("Error getting birds");
+          }
+      );
+      loader.dismiss();
+    });
   }
 
 }

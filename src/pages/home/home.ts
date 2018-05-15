@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController  } from 'ionic-angular';
+import { NavController, ToastController, LoadingController  } from 'ionic-angular';
 
 import { UserProvider } from '../../providers/user/user';
 import { MenuPage} from '../menu/menu';
@@ -21,7 +21,12 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
               public user: UserProvider,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              public loading: LoadingController) {
+  }
+
+  ionViewDidLoad(){
+
   }
 
  showLoginError(){
@@ -35,21 +40,26 @@ export class HomePage {
 
   //Login through our service and error handlers
   doLogin() {
-    this.user.login(this.account).subscribe(
-      (resp:any) => {
-        if(resp.status == "OK"){
-          this.navCtrl.push(MenuPage);
-          this.user.setUserId(resp.id);
-          console.log("login ok, id: " + resp.id);
-        }else{
-          this.showLoginError();
+    let loader = this.loading.create({
+      content: 'Autenticando...',
+    });
+
+    loader.present().then(() => {
+      this.user.login(this.account).subscribe(
+        (resp:any) => {
+          if(resp.status == "OK"){
+            this.navCtrl.push(MenuPage);
+            this.user.setUserId(resp.id);
+            console.log("login ok, id: " + resp.id);
+          }else{
+            this.showLoginError();
+          }
+
+        }, (err) => {
+            this.showLoginError();
         }
-
-      }, (err) => {
-          this.showLoginError();
-      }
-    );
+      );
+      loader.dismiss();
+    });
   }
-
-
 }
