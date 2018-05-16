@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Añadir ave</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <form [formGroup]="validations_form">
+      <ion-item>
+        <ion-label [class.invalid]="!validations_form.controls.name.valid && (validations_form.controls.name.dirty || submitAttempt)">Nombre</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <p *ngIf="submitAttempt" style="color: #ea6153;">El nombre es obligatorio</p>
+      <ion-item>
+        <ion-label [class.invalid]="!validations_form.controls.description.valid && (validations_form.controls.description.dirty || submitAttempt)">Descripción</ion-label>
+        <ion-textarea  rows="3" formControlName="description"></ion-textarea>
+      </ion-item>
+      <p *ngIf="submitAttempt" style="color: #ea6153;">La descripción tiene que tener mínimo 30 caracteres</p>
+      <ion-item>
+        <ion-label>¿Has visto el ave?</ion-label>
+        <ion-toggle checked="false" (ionChange)="onToggleClick()"></ion-toggle>
+      </ion-item>
+      <ion-item  *ngIf="toogleClicked">
+        <ion-label>Lugar</ion-label>
+        <ion-input disabled type="text"></ion-input>
+      </ion-item>
+     </form>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+    <button class="no-margin" ion-button full (click)="anyadirAve()">Guardar</button>
+</ion-footer>

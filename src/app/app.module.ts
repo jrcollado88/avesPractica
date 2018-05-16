@@ -12,6 +12,10 @@ import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { ListadoAvesPage } from '../pages/listado-aves/listado-aves';
 import { DetalleAvePage } from '../pages/detalle-ave/detalle-ave';
+import { AnyadirAvePage } from '../pages/anyadir-ave/anyadir-ave';
+import { AddAvistamientoPage } from '../pages/add-avistamiento/add-avistamiento';
+
+
 import { UserProvider } from '../providers/user/user';
 import { AvesProvider } from '../providers/aves/aves';
 
@@ -21,7 +25,9 @@ import { AvesProvider } from '../providers/aves/aves';
     HomePage,
     MenuPage,
     ListadoAvesPage,
-    DetalleAvePage
+    DetalleAvePage,
+    AnyadirAvePage,
+    AddAvistamientoPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,9 @@ import { AvesProvider } from '../providers/aves/aves';
     HomePage,
     MenuPage,
     ListadoAvesPage,
-    DetalleAvePage
+    DetalleAvePage,
+    AnyadirAvePage,
+    AddAvistamientoPage
   ],
   providers: [
     StatusBar,

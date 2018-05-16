@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AvesProvider } from '../../providers/aves/aves';
+import { AddAvistamientoPage} from '../add-avistamiento/add-avistamiento';
+
 
 @IonicPage()
 @Component({
@@ -11,7 +13,9 @@ import { AvesProvider } from '../../providers/aves/aves';
 export class DetalleAvePage {
   aveId:any;
   aveDetails:any;
-  private dataLoaded:boolean=false;
+  dataLoaded:boolean=false;
+  anyadirAvistamiento:any=AddAvistamientoPage;
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
