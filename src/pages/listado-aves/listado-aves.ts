@@ -27,8 +27,7 @@ export class ListadoAvesPage {
     loader.present().then(() => {
       this.avesService.getBirdsList(this.userService.getUserId()).subscribe(
           (resp:any) =>{
-            this.avesList = resp;
-          //  console.log("Success getBirds : " + this.avesList);
+            this.avesList = resp;     
           },(err:any) =>{
             console.log("Error getting birds");
           }

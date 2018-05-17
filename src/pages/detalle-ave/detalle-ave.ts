@@ -21,6 +21,10 @@ export class DetalleAvePage {
               public navParams: NavParams,
               public avesService: AvesProvider,
               public loading: LoadingController) {
+   
+  }
+
+  ionViewWillEnter(){
     let loader = this.loading.create({
       content: 'Cargando detalles...',
     });

@@ -21,7 +21,7 @@
     {{aveDetails.bird_description}}
   </p>
 
-  <ion-list class="no-margin">
+  <ion-list>
 
     <ion-list-header>
       Avistamientos
@@ -34,6 +34,6 @@
 
 </ion-content>
 
-<ion-footer>
-    <button class="no-margin" ion-button full [navPush]="anyadirAvistamiento">Añadir avistamiento</button>
+<ion-footer *ngIf="dataLoaded">
+    <button ion-button full [navPush]="anyadirAvistamiento" [navParams]="{aveId:aveId}">Añadir avistamiento</button>
 </ion-footer>

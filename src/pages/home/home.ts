@@ -25,10 +25,6 @@ export class HomePage {
               public loading: LoadingController) {
   }
 
-  ionViewDidLoad(){
-
-  }
-
  showLoginError(){
     let toast = this.toastCtrl.create({
       message: "Usuario/Contraseña incorrecto. Por favor, inténtelo de nuevo.",

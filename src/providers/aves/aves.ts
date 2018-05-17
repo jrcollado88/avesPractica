@@ -22,7 +22,10 @@ export class AvesProvider {
 
   getBirdDetails(birdId:any){
     return this.http.get(this.url + '/getBirdDetails/' + birdId);
-
+  }
+  
+  saveSighting(sightingInfo:any){
+    return this.http.post(this.url + '/addSighting/', sightingInfo);
   }
 
 }
