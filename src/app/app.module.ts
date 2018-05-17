@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 
 import { MyApp } from './app.component';
@@ -50,7 +52,8 @@ import { AvesProvider } from '../providers/aves/aves';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
-    AvesProvider
+    AvesProvider,
+    Geolocation
   ]
 })
 export class AppModule {}

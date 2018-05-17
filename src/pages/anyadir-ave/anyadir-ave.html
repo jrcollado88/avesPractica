@@ -17,7 +17,7 @@
         <ion-label [class.invalid]="!validations_form.controls.description.valid && (validations_form.controls.description.dirty || submitAttempt)">Descripción</ion-label>
         <ion-textarea  rows="3" formControlName="description"></ion-textarea>
       </ion-item>
-      <p *ngIf="submitAttempt" style="color: #ea6153;">La descripción tiene que tener mínimo 30 caracteres</p>
+      <p *ngIf="submitAttempt" style="color: #ea6153;">La descripción tiene que tener mínimo 20 caracteres</p>
       <ion-item>
         <ion-label>¿Has visto el ave?</ion-label>
         <ion-toggle checked="false" (ionChange)="onToggleClick()"></ion-toggle>
