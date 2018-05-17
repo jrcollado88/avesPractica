@@ -38,6 +38,7 @@ export class AddAvistamientoPage {
 
       this.sightingInfo.long=resp.coords.longitude;
       this.sightingInfo.lat=resp.coords.latitude;
+      
       }).catch((error) => {
         let toast = this.toastCtrl.create({
           message: "Ha ocurrido un error obteniendo su localización",
@@ -73,9 +74,6 @@ export class AddAvistamientoPage {
         );
         loader.dismiss();
       });
-      console.log("Enviamos datos");
-    }else{
-      console.log("Hay errores en los datos");
     }
   }
 

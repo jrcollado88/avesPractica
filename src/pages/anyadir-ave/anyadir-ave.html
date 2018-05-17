@@ -10,21 +10,21 @@
     <form [formGroup]="validations_form">
       <ion-item>
         <ion-label [class.invalid]="!validations_form.controls.name.valid && (validations_form.controls.name.dirty || submitAttempt)">Nombre</ion-label>
-        <ion-input type="text" formControlName="name"></ion-input>
+        <ion-input type="text" formControlName="name" [(ngModel)]="birdName"></ion-input>
       </ion-item>
       <p *ngIf="submitAttempt" style="color: #ea6153;">El nombre es obligatorio</p>
       <ion-item>
         <ion-label [class.invalid]="!validations_form.controls.description.valid && (validations_form.controls.description.dirty || submitAttempt)">Descripción</ion-label>
-        <ion-textarea  rows="3" formControlName="description"></ion-textarea>
+        <ion-textarea  rows="3" formControlName="description" [(ngModel)]="birdDescription"></ion-textarea>
       </ion-item>
       <p *ngIf="submitAttempt" style="color: #ea6153;">La descripción tiene que tener mínimo 20 caracteres</p>
       <ion-item>
         <ion-label>¿Has visto el ave?</ion-label>
         <ion-toggle checked="false" (ionChange)="onToggleClick()"></ion-toggle>
       </ion-item>
-      <ion-item  *ngIf="toogleClicked">
+      <ion-item  *ngIf="toogleClicked && locationGranted">
         <ion-label>Lugar</ion-label>
-        <ion-input disabled type="text"></ion-input>
+        <ion-input type="text"></ion-input>
       </ion-item>
      </form>
   </ion-list>

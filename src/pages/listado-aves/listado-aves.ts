@@ -18,8 +18,9 @@ export class ListadoAvesPage {
               public navParams: NavParams,
               public userService: UserProvider,
               public avesService: AvesProvider,
-              public loading: LoadingController) {
+              public loading: LoadingController) {}
 
+  ionViewWillEnter(){
     let loader = this.loading.create({
       content: 'Cargando aves...',
     });

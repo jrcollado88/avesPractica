@@ -28,4 +28,8 @@ export class AvesProvider {
     return this.http.post(this.url + '/addSighting/', sightingInfo);
   }
 
+  saveBird(birdInfo:any){
+    return this.http.post(this.url + '/addBird/', birdInfo);
+  }
+
 }
