@@ -19,7 +19,7 @@ export class AnyadirAvePage {
               public formBuilder: FormBuilder) {
     this.validations_form = this.formBuilder.group({
     	name: new FormControl('', Validators.required),
-      description: ['', Validators.compose([Validators.minLength(30), Validators.required])]
+      description: ['', Validators.compose([Validators.minLength(20), Validators.required])]
     });
   }
 

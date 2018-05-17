@@ -11,6 +11,20 @@
 </ion-header>
 
 
-<ion-content padding>
-  
+<ion-content padding >
+  <ion-list>
+    <form [formGroup]="validations_form">
+      <ion-item>
+        <ion-label [class.invalid]="!validations_form.controls.name.valid && (validations_form.controls.name.dirty || submitAttempt)">Nombre</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+    </form>
+   </ion-list>
+
+  <p *ngIf="!locationGranted">
+     Obteniendo localización...
+  </p>
+   <div  *ngIf="locationGranted">
+    <button ion-button block (click)="anyadirAvistamiento()">Guardar</button>
+   </div>
 </ion-content>
