@@ -5,6 +5,18 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('../fonts/Lato-Light.eot') format('embedded-opentype'), url('../fonts/Lato-Light.woff') format('woff'), url('../assets/fonts/Lato-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*:not(ion-icon) {
+  font-family: 'Lato-Light' !important;
+}
+
+
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:

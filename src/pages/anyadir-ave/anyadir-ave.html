@@ -22,8 +22,9 @@
         <ion-label>¿Has visto el ave?</ion-label>
         <ion-toggle checked="false" (ionChange)="onToggleClick()"></ion-toggle>
       </ion-item>
+      <p class="loading" text-center *ngIf="toogleClicked && !locationGranted">Cargando localización...</p>
       <ion-item  *ngIf="toogleClicked && locationGranted">
-        <ion-label>Lugar</ion-label>
+        <ion-label>¿Dónde?</ion-label>
         <ion-input type="text"></ion-input>
       </ion-item>
      </form>
@@ -31,5 +32,5 @@
 
 </ion-content>
 <ion-footer>
-    <button class="no-margin" ion-button full (click)="anyadirAve()">Guardar</button>
+    <button class="no-margin" color="secondary" ion-button full (click)="anyadirAve()">Guardar</button>
 </ion-footer>
